@@ -1,0 +1,50 @@
+@import '../../assets/styles/vars';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-bottom: 1px solid var(--color-gray);
+  border-top: 1px solid var(--color-gray);
+  margin: 20px 0;
+  position: fixed;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+
+  &__link {
+    padding: 16px 25px;
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-right: 1px solid var(--color-gray);
+    border-left: 1px solid var(--color-gray);
+    position: relative;
+    transition: .5s linear;
+
+    &:hover, &.active{
+      color: var(--color-white);
+      &::after {
+        opacity: 1;
+        color: var(--color-greenlight);
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      opacity: 0;
+      width: 32px;
+      height: 1px;
+      background-color: var(--color-white);
+      box-shadow: 0 0 6px 2px;
+      position: absolute;
+      bottom: 13px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: .5s linear;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
+    /*background-color: black;*/
+    color: var(--color-gray);
+    background: black url("./assets/img/HomePage/background.jpg") fixed center top no-repeat;
+}
+
+.App {
+    position: relative;
+    text-align: center;
+}
+
+.container {
+    max-width: 1400px;
+    padding: 20px 10px;
+    margin: 0 auto;
+}
+
