@@ -1,11 +1,11 @@
 .cards{
-  margin-bottom: 300px;
+  margin-bottom: 100px;
   &__container.container{
     width: 70%;
   }
   &__header{
     height: 700px;
-    background: url("../../../assets/img/HomePage/Cards/cardsbackground.jpg") center top no-repeat;
+    background: url("../../../assets/img/HomePage/Cards/cards-background.jpg") center top no-repeat;
     background-size: cover;
     position: relative;
     &-info{
@@ -22,8 +22,21 @@
       margin-bottom: 40px;
     }
   }
+
   &__body{
-    height: 700px;
+    padding-bottom: 1em;
+    padding-top: 3em;
     background: linear-gradient(180deg,#1f4055 0,#5e6c88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    flex-wrap: wrap;
   }
 }

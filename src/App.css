@@ -15,14 +15,14 @@ a {
 
 html {
     overflow-x: hidden;
-    /*background-color: black;*/
     color: var(--color-gray);
-    background: black url("./assets/img/HomePage/background.jpg") fixed center top no-repeat;
+    background: black url("./assets/img/HomePage/home-background.jpg") fixed center top no-repeat;
 }
 
 .App {
     position: relative;
     text-align: center;
+    min-height: 100vh;
 }
 
 .container {

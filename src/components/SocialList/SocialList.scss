@@ -1,0 +1,71 @@
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 40px;
+      width: 1px;
+      background-color: var(--color-gray);
+    }
+
+    & svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    & svg path {
+      fill: var(--color-gray);
+      transition: .3s linear;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 10px;
+
+    &:hover {
+      & svg path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+
+  &__kids {
+    display: block;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1px .5em;
+    text-decoration: none;
+    width: 50px;
+    transition: .3s linear;
+    &:hover{
+      background-color: var(--color-white);
+    }
+
+
+  }
+
+
+}

@@ -2,7 +2,6 @@
   width: 248px;
   height: 393px;
   overflow: hidden;
-  border: 1px solid red;
   position: relative;
   border-radius: 4px;
   margin-bottom: 1em;
@@ -10,6 +9,11 @@
   &:hover{
     .card__image{
       transform: scale(1.1);
+    }
+    &>.card__content>.card__decal-left:after, &>.card__content>.card__decal-left:before {
+      border-bottom: 2px solid var(--color-white);
+      border-top: 2px solid var(--color-white);
+      box-shadow: 0 0 6px 2px;
     }
   }
   &__wrapper{
@@ -67,6 +71,55 @@
     width: 24px;
     z-index: 0;
   }
+  .card__decal-right:after, .card__decal-right:before {
+    background: #ffffff33;
+    border-radius: 0 0 2px 2px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 4px;
+  }
+
+  .card__decal-right:after {
+    right: -5px;
+  }
+  .card__decal-right:after, .card__decal-right:before {
+    background: #ffffff33;
+    border-radius: 0 0 2px 2px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 4px;
+  }
+
+  .card__decal-left:before {
+    width: 16px;
+  }
+
+  .card__decal-left:after {
+    left: 32px;
+    width: 4px;
+  }
+  .card__decal-left:after, .card__decal-left:before {
+    border-bottom: 2px solid hsla(0, 0%, 100%, .2);
+    border-radius: 2px;
+    border-top: 2px solid hsla(0, 0%, 100%, .2);
+    box-shadow: none;
+    content: "";
+    position: absolute;
+    transition: box-shadow .3s ease;
+  }
+
+  .card__decal-left:after, .card__decal-left:before {
+    border-bottom: 2px solid hsla(0, 0%, 100%, .2);
+    border-radius: 2px;
+    border-top: 2px solid hsla(0, 0%, 100%, .2);
+    box-shadow: none;
+    content: "";
+    position: absolute;
+    transition: box-shadow .3s ease;
+  }
+
   &__footer {
     background-color: initial;
     height: 6px;
