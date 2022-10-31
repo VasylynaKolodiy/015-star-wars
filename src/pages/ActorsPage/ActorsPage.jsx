@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './ActorsPage.scss'
 import Loader from "../../components/Loader/Loader";
-import Pagination from "./Pagination/Pagination";
+import Pagination from "../../components/Pagination/Pagination";
 import {useDispatch, useSelector} from "react-redux";
 import {GET_ACTORS_REQUEST} from "../../actions/actors";
 import ActorsList from "./ActorsList/ActorsList";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
 const ActorsPage = () => {
 
@@ -25,6 +26,7 @@ const ActorsPage = () => {
 
   return (
     <main className='actors'>
+      <BreadCrumbs/>
       <Pagination pages={pages} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
       {isActorsLoading
         ? <Loader/>

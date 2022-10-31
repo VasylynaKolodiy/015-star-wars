@@ -1,0 +1,46 @@
+.actor {
+  margin: 100px 0;
+  text-align: left;
+
+
+  &__container {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--color-gray);
+  }
+
+  &__wrapper {
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+  }
+
+  &__info {
+    width: 60%;
+    color: black;
+  }
+
+  &__text {
+    padding: 5px;
+
+  }
+
+  &__text span {
+    font-weight: bold;
+  }
+}

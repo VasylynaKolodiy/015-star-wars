@@ -10,7 +10,6 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import {Provider} from "react-redux";
 
 const saga = createSagaMiddleware();
-const publicURL = process.env.REACT_APP_PUBLIC_URL;
 
 export const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(saga)

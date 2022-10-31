@@ -1,50 +1,50 @@
 import {
-  GET_ACTORS_REQUEST,
-  GET_ACTORS_SUCCESS,
-  GET_ACTORS_FAIL, GET_ACTOR_REQUEST, GET_ACTOR_SUCCESS, GET_ACTOR_FAIL,
-} from "../actions/actors";
+  GET_STARSHIPS_REQUEST,
+  GET_STARSHIPS_SUCCESS,
+  GET_STARSHIPS_FAIL, GET_STARSHIP_REQUEST, GET_STARSHIP_SUCCESS, GET_STARSHIP_FAIL,
+} from "../actions/starships";
 
 const initialState = {
   loading: false,
-  actors: [],
-  actor: [],
+  starships: [],
+  starship: [],
 };
 
-export default function actors(state = initialState, action) {
+export default function starships(state = initialState, action) {
   switch (action.type) {
-    case GET_ACTORS_REQUEST:
+    case GET_STARSHIPS_REQUEST:
       return {
         ...state,
         loading: true
       };
 
-    case GET_ACTORS_SUCCESS:
+    case GET_STARSHIPS_SUCCESS:
       return {
         ...state,
-        actors: action.payload,
+        starships: action.payload,
         loading: false,
       };
 
-    case GET_ACTORS_FAIL:
+    case GET_STARSHIPS_FAIL:
       return {
         ...state,
         loading: false,
       };
 
-    case GET_ACTOR_REQUEST:
+    case GET_STARSHIP_REQUEST:
       return {
         ...state,
         loading: true
       };
 
-    case GET_ACTOR_SUCCESS:
+    case GET_STARSHIP_SUCCESS:
       return {
         ...state,
-        actor: action.payload,
+        starship: action.payload,
         loading: false,
       };
 
-    case GET_ACTOR_FAIL:
+    case GET_STARSHIP_FAIL:
       return {
         ...state,
         loading: false,

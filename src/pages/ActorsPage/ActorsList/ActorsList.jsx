@@ -15,7 +15,9 @@ const ActorsList = ({actors}) => {
 
           <h3 className='actors__name' key={i}> {actor.name}</h3>
 
-          <Link className='actors__link'></Link>
+          <Link className='actors__link'
+                to={`/actors/${actor.url.replace(/[^0-9]/g, '')}`}>
+          </Link>
         </div>
       )}
     </section>
