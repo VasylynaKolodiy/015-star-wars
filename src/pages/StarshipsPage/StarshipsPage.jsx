@@ -1,20 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import './Starships.scss'
+import './StarshipsPage.scss'
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import {useDispatch, useSelector} from "react-redux";
 import {GET_STARSHIPS_REQUEST} from "../../actions/starships";
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader";
-import StarshipsList from "./StarshipsList/StarshipsList";
+import ItemsList from "../../components/ItemsList/ItemsList";
 
 
-const Starships = () => {
+const StarshipsPage = () => {
   let [pageNumber, setPageNumber] = useState(1)
-  let pages = Array.from(Array(4).keys())
   const dispatch = useDispatch();
-
   const isStarshipsLoading = useSelector((state) => state.starships.loading);
-  const starships = useSelector((state) => state.starships.starships);
+  const starshipsFull = useSelector((state) => state.starships.starships);
 
   useEffect(() => {
     dispatch({
@@ -22,18 +20,23 @@ const Starships = () => {
       payload: pageNumber
     })
   }, [pageNumber])
-  console.log(starships)
-  
+
+  let countOfPages = starshipsFull.count &&  Math.ceil(starshipsFull.count / 10)
+  let pages = Array.from(Array(countOfPages).keys())
+console.log(starshipsFull.count, 'starshipsFull.count')
   return (
     <main className='starships'>
       <BreadCrumbs/>
-      <Pagination pages={pages} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination pages={pages}
+                  pageNumber={pageNumber}
+                  setPageNumber={setPageNumber}/>
+
       {isStarshipsLoading
         ? <Loader/>
-        : <StarshipsList starships={starships}/>
+        : <ItemsList items={starshipsFull.results} itemUrl='starships' itemPhoto='starships'/>
       }
     </main>
   );
 };
 
-export default Starships;
+export default StarshipsPage;

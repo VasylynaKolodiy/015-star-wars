@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Pagination.scss'
 
 const Pagination = ({pages, pageNumber, setPageNumber}) => {
+
   return (
     <ul className='pagination container'>
       {pages.map(page =>

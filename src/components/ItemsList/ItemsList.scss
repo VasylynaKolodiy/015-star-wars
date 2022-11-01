@@ -1,4 +1,4 @@
-.starships {
+.items{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,7 +21,7 @@
     flex-direction: column;
 
     &:hover {
-      .actors__photo {
+      .items__photo {
         transform: scale(1.1);
       }
     }

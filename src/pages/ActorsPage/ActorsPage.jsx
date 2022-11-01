@@ -4,33 +4,35 @@ import Loader from "../../components/Loader/Loader";
 import Pagination from "../../components/Pagination/Pagination";
 import {useDispatch, useSelector} from "react-redux";
 import {GET_ACTORS_REQUEST} from "../../actions/actors";
-import ActorsList from "./ActorsList/ActorsList";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
+import ItemsList from "../../components/ItemsList/ItemsList";
 
 const ActorsPage = () => {
-
   let [pageNumber, setPageNumber] = useState(1)
-  let pages = Array.from(Array(9).keys())
   const dispatch = useDispatch();
-
   const isActorsLoading = useSelector((state) => state.actors.loading);
-  const actors = useSelector((state) => state.actors.actors);
+  const actorsFull = useSelector((state) => state.actors.actors);
 
   useEffect(() => {
     dispatch({
       type: GET_ACTORS_REQUEST,
-      payload: pageNumber
+      payload: pageNumber,
     })
   }, [pageNumber])
 
+  let countOfPages = actorsFull.count &&  Math.ceil(actorsFull.count / 10)
+  let pages = Array.from(Array(countOfPages).keys())
 
   return (
     <main className='actors'>
       <BreadCrumbs/>
-      <Pagination pages={pages} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination pages={pages}
+                  pageNumber={pageNumber}
+                  setPageNumber={setPageNumber}/>
+
       {isActorsLoading
         ? <Loader/>
-        : <ActorsList actors={actors}/>
+        : <ItemsList items={actorsFull.results} itemUrl='actors' itemPhoto='characters'/>
       }
     </main>
   );

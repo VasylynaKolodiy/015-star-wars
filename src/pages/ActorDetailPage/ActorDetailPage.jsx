@@ -31,7 +31,7 @@ const ActorDetailPage = () => {
           <div className="actor__wrapper">
             <img className='actor__photo'
                  src={`https://starwars-visualguide.com/assets/img/characters/${params.id}.jpg`}
-                 alt=""/>
+                 alt={`${actor.name} photo`}/>
           </div>
 
           <div className="actor__info">

@@ -5,7 +5,7 @@ import {Api} from "../api";
 function* getStarships(action) {
   try {
     const res = yield call(Api.starships.getStarships, action.payload);
-    yield put({type: starshipsActions.GET_STARSHIPS_SUCCESS, payload: res.data.results});
+    yield put({type: starshipsActions.GET_STARSHIPS_SUCCESS, payload: res.data});
 
   } catch (err) {
     yield put({ type: starshipsActions.GET_STARSHIPS_FAIL, payload: { error: err.message } });

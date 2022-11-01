@@ -2,7 +2,7 @@ import React from "react";
 import HomePage from "../pages/HomePage/HomePage";
 import ActorsPage from "../pages/ActorsPage/ActorsPage";
 import ActorDetailPage from "../pages/ActorDetailPage/ActorDetailPage";
-import Starships from "../pages/Starships/Starships";
+import StarshipsPage from "../pages/StarshipsPage/StarshipsPage";
 
 export const privateRoutes = [
   {
@@ -22,7 +22,7 @@ export const privateRoutes = [
   },
   {
     path: "/starships",
-    component: <Starships/>,
+    component: <StarshipsPage/>,
     exact: true,
   },
 ]
