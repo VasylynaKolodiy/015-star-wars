@@ -14,7 +14,7 @@ function* getStarships(action) {
 
 function* getStarship(action) {
   try {
-    const res = yield call(Api.starship.getStarship, action.payload);
+    const res = yield call(Api.starships.getStarship, action.payload);
     yield put({type: starshipsActions.GET_STARSHIP_SUCCESS, payload: res.data});
 
   } catch (err) {

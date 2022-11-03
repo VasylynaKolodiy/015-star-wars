@@ -1,50 +1,53 @@
 import {
-  GET_STARSHIPS_REQUEST,
-  GET_STARSHIPS_SUCCESS,
-  GET_STARSHIPS_FAIL, GET_STARSHIP_REQUEST, GET_STARSHIP_SUCCESS, GET_STARSHIP_FAIL,
-} from "../actions/starships";
+  GET_VEHICLES_REQUEST,
+  GET_VEHICLES_SUCCESS,
+  GET_VEHICLES_FAIL,
+  GET_VEHICLE_REQUEST,
+  GET_VEHICLE_SUCCESS,
+  GET_VEHICLE_FAIL,
+} from "../actions/vehicles";
 
 const initialState = {
   loading: false,
-  starships: {},
-  starship: {},
+  vehicles: {},
+  vehicle: {},
 };
 
-export default function starships(state = initialState, action) {
+export default function vehicles(state = initialState, action) {
   switch (action.type) {
-    case GET_STARSHIPS_REQUEST:
+    case GET_VEHICLES_REQUEST:
       return {
         ...state,
         loading: true
       };
 
-    case GET_STARSHIPS_SUCCESS:
+    case GET_VEHICLES_SUCCESS:
       return {
         ...state,
-        starships: action.payload,
+        vehicles: action.payload,
         loading: false,
       };
 
-    case GET_STARSHIPS_FAIL:
+    case GET_VEHICLES_FAIL:
       return {
         ...state,
         loading: false,
       };
 
-    case GET_STARSHIP_REQUEST:
+    case GET_VEHICLE_REQUEST:
       return {
         ...state,
         loading: true
       };
 
-    case GET_STARSHIP_SUCCESS:
+    case GET_VEHICLE_SUCCESS:
       return {
         ...state,
-        starship: action.payload,
+        vehicle: action.payload,
         loading: false,
       };
 
-    case GET_STARSHIP_FAIL:
+    case GET_VEHICLE_FAIL:
       return {
         ...state,
         loading: false,

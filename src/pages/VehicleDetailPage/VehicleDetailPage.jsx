@@ -1,35 +1,35 @@
 import React, {useEffect} from 'react';
-import './ActorDetailPage.scss'
+import './VehicleDetailPage.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {GET_ACTOR_REQUEST} from "../../actions/actors";
+import {GET_VEHICLE_REQUEST} from "../../actions/vehicles";
 import {useParams} from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
-const ActorDetailPage = () => {
+const VehicleDetailPage = () => {
   const params = useParams();
 
   const dispatch = useDispatch();
-  const isActorLoading = useSelector((state) => state.actors.loading);
-  const actor = useSelector((state) => state.actors.actor);
+  const isVehicleLoading = useSelector((state) => state.vehicles.loading);
+  const vehicle = useSelector((state) => state.vehicles.vehicle);
 
   useEffect(() => {
     dispatch({
-      type: GET_ACTOR_REQUEST,
+      type: GET_VEHICLE_REQUEST,
       payload: params.id
     })
   }, [params.id])
 
   return (
-    <main className='actor'>
-      <BreadCrumbs name={actor.name}/>
-      {isActorLoading
+    <main className='vehicle'>
+      <BreadCrumbs name={vehicle.name}/>
+      {isVehicleLoading
         ? <Loader/>
-        : <ItemDetail item={actor} itemPhoto='characters'/>
+        : <ItemDetail item={vehicle} itemPhoto='vehicles'/>
       }
     </main>
   );
 };
 
-export default ActorDetailPage;
+export default VehicleDetailPage;

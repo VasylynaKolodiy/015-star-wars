@@ -7,7 +7,7 @@ import {
 const initialState = {
   loading: false,
   actors: {},
-  actor: [],
+  actor: {},
 };
 
 export default function actors(state = initialState, action) {

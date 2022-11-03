@@ -14,12 +14,7 @@ function* getActors(action) {
 
 function* getActor(action) {
   try {
-    console.log(33333)
-    console.log(Api.actor.getActor, 'Api.actor.getActor')
-    console.log(Api.actor, 'Api.actor')
-    console.log(Api, 'Api')
-    const res = yield call(Api.actor.getActor, action.payload);
-    console.log(res, 'res')
+    const res = yield call(Api.actors.getActor, action.payload);
     yield put({type: actorsActions.GET_ACTOR_SUCCESS, payload: res.data});
 
   } catch (err) {
