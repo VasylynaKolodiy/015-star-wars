@@ -5,7 +5,7 @@ export const vehicles = {
     return axios.get('https://swapi.dev/api/vehicles/?page=' + pageNumber);
   },
   getVehicle: (id) => {
-    return axios.get('https://swapi.dev/api/vehicles' + id);
+    return axios.get('https://swapi.dev/api/vehicles/' + id);
   },
 };
 
