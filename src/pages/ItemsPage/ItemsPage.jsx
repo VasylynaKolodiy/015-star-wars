@@ -3,7 +3,6 @@ import './ItemsPage.scss'
 import Loader from "../../components/Loader/Loader";
 import Pagination from "../../components/Pagination/Pagination";
 import {useDispatch, useSelector} from "react-redux";
-
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import ItemsList from "../../components/ItemsList/ItemsList";
 import {useParams} from "react-router-dom";
@@ -11,7 +10,6 @@ import {useParams} from "react-router-dom";
 const ItemsPage = () => {
 
   const params = useParams();
-  console.log(params, 'params')
   let items = params.name
 
   let [pageNumber, setPageNumber] = useState(1)
@@ -20,7 +18,11 @@ const ItemsPage = () => {
   const itemsFull = useSelector((state) => state[items][items]);
 
   let getRequest = ''
-  getRequest = getRequest.concat('GET_', items.toUpperCase(), '_REQUEST')
+  getRequest = `GET_${items.toUpperCase()}_REQUEST`
+
+  useEffect(() => {
+    setPageNumber(1)
+  }, [params.name])
 
   useEffect(() => {
     dispatch({
@@ -41,7 +43,9 @@ const ItemsPage = () => {
 
       {isItemsLoading
         ? <Loader/>
-        : <ItemsList items={itemsFull.results} itemUrl={params.name} itemPhoto={params.name}/>
+        : <ItemsList items={itemsFull.results}
+                     itemUrl={items}
+                     itemPhoto={items}/>
       }
     </main>
   );

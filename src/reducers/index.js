@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import actors from "./actors";
+import characters from "./characters";
 import starships from "./starships";
 import vehicles from "./vehicles";
 
 const reducers = combineReducers({
-  actors: actors,
+  characters: characters,
   starships: starships,
   vehicles: vehicles,
 });

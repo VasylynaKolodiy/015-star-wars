@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./routers/AppRouter/AppRouter";
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navigation/>
-        <AppRouter/>
+        <AppRouter />
         <Footer/>
       </BrowserRouter>
     </div>

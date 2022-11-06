@@ -1,7 +1,6 @@
 import React from "react";
 import HomePage from "../pages/HomePage/HomePage";
-import ActorsPage from "../pages/ActorsPage/ActorsPage";
-import ActorDetailPage from "../pages/ActorDetailPage/ActorDetailPage";
+
 import StarshipsPage from "../pages/StarshipsPage/StarshipsPage";
 import StarshipDetailPage from "../pages/StarshipsPage/StarshipDetailPage/StarshipDetailPage";
 import VehiclesPage from "../pages/VehiclesPage/VehiclesPage";

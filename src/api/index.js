@@ -1,10 +1,10 @@
-import {actors} from "./drivers/actors"
+import {characters} from "./drivers/characters"
 import {starships} from "./drivers/starships";
 import {vehicles} from "./drivers/vehicles";
 
 
 export const Api = {
-  actors: actors,
+  characters: characters,
   starships: starships,
   vehicles: vehicles,
 };
