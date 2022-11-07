@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-
   &__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

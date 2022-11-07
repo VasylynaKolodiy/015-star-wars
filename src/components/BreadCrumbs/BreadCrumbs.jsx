@@ -8,7 +8,7 @@ const BreadCrumbs = ({name}) => {
   const data = location.pathname.split('/').slice(1);
 
   return (
-    <section className="breadcrumbs container">
+    <section className="breadcrumbs">
       <ul className="breadcrumbs__list">
         <li className="breadcrumbs__first-item">
           <Link className="breadcrumbs__first-item-link" to='/'>Home</Link>

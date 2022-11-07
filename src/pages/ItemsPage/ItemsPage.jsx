@@ -10,15 +10,13 @@ import {useParams} from "react-router-dom";
 const ItemsPage = () => {
 
   const params = useParams();
-  let items = params.name
-
+  let itemsName = params.name
   let [pageNumber, setPageNumber] = useState(1)
   const dispatch = useDispatch();
-  const isItemsLoading = useSelector((state) => state[items].loading);
-  const itemsFull = useSelector((state) => state[items][items]);
+  const isItemsLoading = useSelector((state) => state[itemsName].loading);
+  const itemsFull = useSelector((state) => state[itemsName][itemsName]);
 
-  let getRequest = ''
-  getRequest = `GET_${items.toUpperCase()}_REQUEST`
+  let getRequest = `GET_${itemsName.toUpperCase()}_REQUEST`
 
   useEffect(() => {
     setPageNumber(1)
@@ -31,21 +29,27 @@ const ItemsPage = () => {
     })
   }, [pageNumber, params.name])
 
-  let countOfPages = itemsFull.count &&  Math.ceil(itemsFull.count / 10)
+  let countOfPages = itemsFull.count && Math.ceil(itemsFull.count / 10)
   let pages = Array.from(Array(countOfPages).keys())
 
   return (
     <main className='items'>
-      <BreadCrumbs/>
-      <Pagination pages={pages}
-                  pageNumber={pageNumber}
-                  setPageNumber={setPageNumber}/>
+      <div className="top container">
+        <BreadCrumbs/>
+
+        {pages.length > 1
+          && <Pagination pages={pages}
+                        pageNumber={pageNumber}
+                        setPageNumber={setPageNumber}/>}
+
+      </div>
+
 
       {isItemsLoading
         ? <Loader/>
         : <ItemsList items={itemsFull.results}
-                     itemUrl={items}
-                     itemPhoto={items}/>
+                     itemUrl={itemsName}
+                     itemPhoto={itemsName}/>
       }
     </main>
   );

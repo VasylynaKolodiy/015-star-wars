@@ -17,7 +17,7 @@ const ItemsList = ({items, itemUrl, itemPhoto}) => {
             />
           </div>
 
-          <h3 className='items__name' key={i}>{item.name}</h3>
+          <h3 className='items__name' key={i}>{item.name || item.title}</h3>
 
           <Link className='items__link'
                 to={`/${itemUrl}/${item.url.replace(/[^0-9]/g, '')}`}>

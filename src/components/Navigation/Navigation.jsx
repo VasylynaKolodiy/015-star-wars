@@ -9,6 +9,9 @@ const Navigation = ({setPageNumber}) => {
       <NavLink className='navigation__link' to='/characters'>Characters</NavLink>
       <NavLink className='navigation__link' to='/starships'>Starships</NavLink>
       <NavLink className='navigation__link' to='/vehicles'>Vehicles</NavLink>
+      <NavLink className='navigation__link' to='/planets'>Planets</NavLink>
+      <NavLink className='navigation__link' to='/species'>Species</NavLink>
+      <NavLink className='navigation__link' to='/films'>Films</NavLink>
     </nav>
   );
 };
