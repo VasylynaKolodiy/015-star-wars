@@ -1,5 +1,6 @@
 .item {
   transition: .1s linear;
+
   &__container {
     display: flex;
     gap: 100px;
@@ -12,7 +13,7 @@
   }
 
   &__wrapper {
-    width: 40%;
+    width: 25%;
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -39,4 +40,28 @@
   &__text span {
     font-weight: bold;
   }
+
+  &__text-planetLink{
+    color: inherit;
+    font-style: italic;
+    transition: .3s linear;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .related{
+    margin: 20px auto;
+    justify-self: flex-start;
+    color: black;
+    background-color: var(--color-gray);
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+
 }
