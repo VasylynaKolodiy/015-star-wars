@@ -12,7 +12,7 @@ const ItemsList = ({items, itemUrl, itemPhoto}) => {
           <div className="items__wrapper">
             <img className='items__photo'
                  src={`https://starwars-visualguide.com/assets/img/${itemPhoto}/${item.url.replace(/[^0-9]/g, '')}.jpg`}
-                 alt={`${item.name} photo`}
+                 alt={`${item.name}`}
                  onError={event => {event.target.src = noImage}}
             />
           </div>

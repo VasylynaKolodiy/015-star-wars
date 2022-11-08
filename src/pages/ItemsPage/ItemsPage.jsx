@@ -16,6 +16,7 @@ const ItemsPage = () => {
   const isItemsLoading = useSelector((state) => state[itemsName].loading);
   const itemsFull = useSelector((state) => state[itemsName][itemsName]);
 
+  console.log(itemsFull, 'itemsFull')
   let getRequest = `GET_${itemsName.toUpperCase()}_REQUEST`
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const ItemsPage = () => {
 
   let countOfPages = itemsFull.count && Math.ceil(itemsFull.count / 10)
   let pages = Array.from(Array(countOfPages).keys())
+
 
   return (
     <main className='items'>
