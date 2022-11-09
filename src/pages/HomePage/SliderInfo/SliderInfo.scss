@@ -127,7 +127,19 @@
 
   .slick-prev::before,
   .slick-next::before {
-    font-size: 35px;
+    content: '';
+    display: block;
+    height: 30px;
+    width: 30px;
+    background: url("../../../assets/img/Items/arrowWhite.svg") center right no-repeat;
+    background-size: contain;
+
+  }
+  .slick-prev::before{
+    transform: translateX(4px);
+  }
+  .slick-next::before {
+    transform: translateX(5px) rotate(180deg);
   }
 }
 

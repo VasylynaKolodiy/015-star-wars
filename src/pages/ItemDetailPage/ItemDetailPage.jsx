@@ -23,7 +23,7 @@ const ItemDetailPage = () => {
       type: getRequest,
       payload: params.id,
     })
-  }, [params.id])
+  }, [params.id, params.name])
 
   return (
     <main className='item'>

@@ -40,9 +40,9 @@ const ItemsPage = () => {
         <BreadCrumbs/>
 
         {pages.length > 1
-          && <Pagination pages={pages}
-                        pageNumber={pageNumber}
-                        setPageNumber={setPageNumber}/>}
+        && <Pagination pages={pages}
+                       pageNumber={pageNumber}
+                       setPageNumber={setPageNumber}/>}
 
       </div>
 
