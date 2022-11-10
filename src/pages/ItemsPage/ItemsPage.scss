@@ -1,14 +1,38 @@
-.items{
+.items {
   margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  .top{
+
+  .top {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: space-between;
     width: 80%;
     margin-top: 100px;
     margin-bottom: 30px;
   }
+}
+
+.css-1p5q5e5-MuiStack-root {
+  margin: 30px auto 0 auto;
+}
+
+.MuiPagination-ul.css-wjh20t-MuiPagination-ul li button {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.MuiPaginationItem-root.MuiPaginationItem-sizeLarge.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-ellipsis.css-1scal0h-MuiPaginationItem-root {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+  background-color: rgba(255, 255, 255, 0.3) !important;
 }

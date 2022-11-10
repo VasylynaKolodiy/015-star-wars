@@ -1,7 +1,7 @@
 import React from 'react';
 import noImage from "../../assets/img/Items/no-photo.jpg";
 import {Link} from "react-router-dom";
-import {charactersNameById} from "../helpers";
+import {charactersNameById} from "../../helpers";
 
 const RelatedItem = ({item, type, elem}) => {
   return (
