@@ -1,7 +1,8 @@
 .breadcrumbs{
-  width: 80%;
   height: 68px;
   font-size: 18px;
+  display: flex;
+  align-items: center;
   &__list{
     display: flex;
     gap: 20px;

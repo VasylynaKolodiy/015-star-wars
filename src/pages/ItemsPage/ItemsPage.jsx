@@ -18,45 +18,32 @@ const ItemsPage = () => {
   const params = useParams();
   let itemsName = params.name
   let [pageNumber, setPageNumber] = useState(1);
-
+  let [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
   const isItemsLoading = useSelector((state) => state[itemsName].loading);
   const itemsFull = useSelector((state) => state[itemsName][itemsName]);
-
   let getRequest = `GET_${itemsName.toUpperCase()}_REQUEST`
-
-  useEffect(() => {
-    setPageNumber(1)
-  }, [params.name])
 
   useEffect(() => {
     dispatch({
       type: getRequest,
-      payload: pageNumber,
+      payload: {
+        pageNumber: pageNumber,
+        searchValue: searchValue,
+      }
     })
-  }, [pageNumber, params.name])
-
-  //
-
-  let [searchValue, setSearchValue] = useState('');
-  function onChangeSearch(event) {
-    setSearchValue(event.target.value)
-  }
-
-  console.log(searchValue, 'searchValue')
-
-  const isItemsSearchLoading = useSelector((state) => state[itemsName].loading);
-  const itemsSearchFull = useSelector((state) => state[itemsName][itemsName+'Search']);
-  let getSearchRequest = `GET_${itemsName.toUpperCase()}_SEARCH_REQUEST`
+  }, [searchValue, pageNumber, params.name])
 
   useEffect(() => {
-    dispatch({
-      type: getSearchRequest,
-      payload: searchValue,
-    })
-  }, [searchValue])
+    setPageNumber(1)
+    setSearchValue('')
+  }, [params.name])
+  console.log(searchValue, 'searchValue')
 
-  //
+  function onChangeSearch(event) {
+    setSearchValue(event.target.value)
+    setPageNumber(1)
+  }
 
   const PER_PAGE = 10
   let countOfPages = itemsFull.count && Math.ceil(itemsFull.count / PER_PAGE)
