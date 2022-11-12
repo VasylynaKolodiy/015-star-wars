@@ -3,7 +3,7 @@ import './ItemsList.scss'
 import {Link} from "react-router-dom";
 import noImage from '../../assets/img/Items/no-photo.jpg'
 
-const ItemsList = ({items, itemUrl, itemPhoto}) => {
+const ItemsList = ({items, itemsName}) => {
 
   return (
     <section className='items__list container'>
@@ -11,16 +11,18 @@ const ItemsList = ({items, itemUrl, itemPhoto}) => {
         <div className='items__item' key={i}>
           <div className="items__wrapper">
             <img className='items__photo'
-                 src={`https://starwars-visualguide.com/assets/img/${itemPhoto}/${item.url.replace(/[^0-9]/g, '')}.jpg`}
+                 src={`https://starwars-visualguide.com/assets/img/${itemsName}/${item.url.replace(/[^0-9]/g, '')}.jpg`}
                  alt={`${item.name}`}
-                 onError={event => {event.target.src = noImage}}
+                 onError={event => {
+                   event.target.src = noImage
+                 }}
             />
           </div>
 
           <h3 className='items__name' key={i}>{item.name || item.title}</h3>
 
           <Link className='items__link'
-                to={`/${itemUrl}/${item.url.replace(/[^0-9]/g, '')}`}>
+                to={`/${itemsName}/${item.url.replace(/[^0-9]/g, '')}`}>
           </Link>
         </div>
       )}

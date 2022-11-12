@@ -7,8 +7,10 @@ import ItemsList from "../../components/ItemsList/ItemsList";
 import {useParams} from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import SimpleZoom from "../../components/SimpleZoom/SimpleZoom";
 import ItemListTable from "../../components/ItemListTable/ItemListTable";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
 
 
 const ItemsPage = () => {
@@ -34,32 +36,61 @@ const ItemsPage = () => {
     })
   }, [pageNumber, params.name])
 
+  //
+
+  let [searchValue, setSearchValue] = useState('');
+  function onChangeSearch(event) {
+    setSearchValue(event.target.value)
+  }
+
+  console.log(searchValue, 'searchValue')
+
+  const isItemsSearchLoading = useSelector((state) => state[itemsName].loading);
+  const itemsSearchFull = useSelector((state) => state[itemsName][itemsName+'Search']);
+  let getSearchRequest = `GET_${itemsName.toUpperCase()}_SEARCH_REQUEST`
+
+  useEffect(() => {
+    dispatch({
+      type: getSearchRequest,
+      payload: searchValue,
+    })
+  }, [searchValue])
+
+  //
+
   const PER_PAGE = 10
   let countOfPages = itemsFull.count && Math.ceil(itemsFull.count / PER_PAGE)
 
-  const handleChange = (event, value) => {
+  const handlePageChange = (event, value) => {
     setPageNumber(value);
   }
-
   let [isTable, setIsTable] = useState(true)
+  const handleTableChange = () => {
+    setIsTable((prev) => !prev);
+  };
+
+
 
   return (
     <main className='items'>
       <div className="top container">
         <BreadCrumbs/>
-        <SimpleZoom isTable={isTable} setIsTable={setIsTable}/>
+        <SearchAppBar searchValue={searchValue}
+                      setSearchValue={setSearchValue}
+                      onChangeSearch={onChangeSearch}/>
+        <FormControlLabel className='FormControlLabel'
+                          control={<Switch className='switch' color="primary" checked={isTable} onChange={handleTableChange}/>}
+                          labelPlacement="start"
+                          label={`${isTable ? 'Table Mode' : 'Card Mode'}`}/>
       </div>
-
 
       {isItemsLoading
         ? <Loader/>
         : isTable
           ? <ItemsList items={itemsFull.results}
-                       itemUrl={itemsName}
-                       itemPhoto={itemsName}/>
+                       itemsName={itemsName}/>
           : <ItemListTable items={itemsFull.results}
-                           itemUrl={itemsName}
-                           itemPhoto={itemsName}/>
+                           itemsName={itemsName}/>
       }
 
       {countOfPages > 1 &&
@@ -67,7 +98,7 @@ const ItemsPage = () => {
         <Pagination count={countOfPages}
                     size="large"
                     page={pageNumber}
-                    onChange={handleChange}/>
+                    onChange={handlePageChange}/>
       </Stack>}
     </main>
   );

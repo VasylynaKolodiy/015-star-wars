@@ -22,7 +22,18 @@ function* getCharacter(action) {
   }
 }
 
+function* getCharactersSearch(action) {
+  try {
+    const res = yield call(Api.characters.getCharacter, action.payload);
+    yield put({type: charactersActions.GET_CHARACTER_SUCCESS, payload: res.data});
+
+  } catch (err) {
+    yield put({ type: charactersActions.GET_CHARACTER_FAIL, payload: { error: err.message } });
+  }
+}
+
 export default all([
   takeLatest(charactersActions.GET_CHARACTERS_REQUEST, getCharacters),
   takeLatest(charactersActions.GET_CHARACTER_REQUEST, getCharacter),
+  takeLatest(charactersActions.GET_CHARACTERS_SEARCH_REQUEST, getCharactersSearch),
 ])

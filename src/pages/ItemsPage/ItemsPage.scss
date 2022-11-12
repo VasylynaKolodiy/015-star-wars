@@ -9,8 +9,8 @@
     align-items: baseline;
     justify-content: space-between;
     width: 80%;
-    margin-top: 100px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    flex: 1;
   }
 }
 
@@ -36,3 +36,20 @@
 .css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
   background-color: rgba(255, 255, 255, 0.3) !important;
 }
+.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd.FormControlLabel.css-j204z7-MuiFormControlLabel-root{
+  margin-right: 0;
+}
+
+
+//.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track{
+//  background-color: green !important;
+//}
+.css-1yjjitx-MuiSwitch-track{
+  background-color: white !important;
+}
+//
+//
+//
+//.css-jsexje-MuiSwitch-thumb{
+//  background-color: orange !important;
+//}

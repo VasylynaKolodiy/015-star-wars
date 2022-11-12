@@ -7,5 +7,8 @@ export const characters = {
   getCharacter: (id) => {
     return axios.get('https://swapi.dev/api/people/' + id);
   },
+  getCharactersSearch: (searchValue) => {
+    return axios.get('https://swapi.dev/api/people/?search=' + searchValue);
+  },
 };
 
