@@ -56,8 +56,10 @@
     color: inherit;
     font-style: italic;
     transition: .3s linear;
+    padding: 3px 5px;
+    border-radius: 10px;
     &:hover {
-      text-decoration: underline;
+      background-color: rgba(0, 0, 0, 0.3);
     }
   }
 }

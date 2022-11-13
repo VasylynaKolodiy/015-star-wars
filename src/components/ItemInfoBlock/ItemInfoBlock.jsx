@@ -1,6 +1,7 @@
 import React from 'react';
 import noImage from "../../assets/img/Items/no-photo.jpg";
 import {Link} from "react-router-dom";
+import {planetsNameById} from "../../helpers";
 
 const ItemInfoBlock = ({item, itemPhoto, params, noShow, titles}) => {
 
@@ -22,7 +23,7 @@ const ItemInfoBlock = ({item, itemPhoto, params, noShow, titles}) => {
               ? <p className='item__text' key={index}>
                 <span>{key.charAt(0).toUpperCase()}{key.slice(1).replaceAll('_', ' ')}: </span>
                 <Link className='item__text-planetLink'
-                      to={`/planets/${item[key].replace(/[^0-9]/g, '')}`}>planet {item[key].replace(/[^0-9]/g, '')}</Link>
+                      to={`/planets/${item[key].replace(/[^0-9]/g, '')}`}>{planetsNameById[item[key].replace(/[^0-9]/g, '')]}</Link>
               </p>
 
               : <p className='item__text' key={index}>

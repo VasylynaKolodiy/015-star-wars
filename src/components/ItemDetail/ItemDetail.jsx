@@ -1,5 +1,4 @@
 import React from 'react';
-import './ItemDetail.scss'
 import {useParams} from "react-router-dom";
 import ItemRelatedBlock from "../ItemRelatedBlock/ItemRelatedBlock";
 import ItemInfoBlock from "../ItemInfoBlock/ItemInfoBlock";

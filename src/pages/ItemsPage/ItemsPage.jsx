@@ -11,7 +11,9 @@ import ItemListTable from "../../components/ItemListTable/ItemListTable";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
-
+import {DebounceInput} from 'react-debounce-input';
+import Skeleton from "@mui/material/Skeleton";
+import Scelet from "../../components/Scelet/Scelet";
 
 const ItemsPage = () => {
 
@@ -22,7 +24,7 @@ const ItemsPage = () => {
   const dispatch = useDispatch();
   const isItemsLoading = useSelector((state) => state[itemsName].loading);
   const itemsFull = useSelector((state) => state[itemsName][itemsName]);
-  let getRequest = `GET_${itemsName.toUpperCase()}_REQUEST`
+  let getRequest = `GET_${itemsName.toUpperCase()}_REQUEST`;
 
   useEffect(() => {
     dispatch({
@@ -38,7 +40,6 @@ const ItemsPage = () => {
     setPageNumber(1)
     setSearchValue('')
   }, [params.name])
-  console.log(searchValue, 'searchValue')
 
   function onChangeSearch(event) {
     setSearchValue(event.target.value)
@@ -56,36 +57,39 @@ const ItemsPage = () => {
     setIsTable((prev) => !prev);
   };
 
-
-
   return (
     <main className='items'>
       <div className="top container">
         <BreadCrumbs/>
         <SearchAppBar searchValue={searchValue}
-                      setSearchValue={setSearchValue}
                       onChangeSearch={onChangeSearch}/>
+
+
         <FormControlLabel className='FormControlLabel'
-                          control={<Switch className='switch' color="primary" checked={isTable} onChange={handleTableChange}/>}
+                          control={<Switch className='switch' color="primary" checked={isTable}
+                                           onChange={handleTableChange}/>}
                           labelPlacement="start"
                           label={`${isTable ? 'Table Mode' : 'Card Mode'}`}/>
       </div>
 
+
       {isItemsLoading
-        ? <Loader/>
-        : isTable
-          ? <ItemsList items={itemsFull.results}
-                       itemsName={itemsName}/>
-          : <ItemListTable items={itemsFull.results}
-                           itemsName={itemsName}/>
+        ? <Scelet/>
+        : itemsFull.results?.length > 0
+          ? isTable
+            ? <ItemsList items={itemsFull.results} itemsName={itemsName}/>
+            : <ItemListTable items={itemsFull.results} itemsName={itemsName}/>
+          : <h2 className='container'>No results {params.name} for your search </h2>
       }
 
       {countOfPages > 1 &&
       <Stack spacing={2}>
-        <Pagination count={countOfPages}
-                    size="large"
-                    page={pageNumber}
-                    onChange={handlePageChange}/>
+        <Pagination
+          count={countOfPages}
+          size="large"
+          page={pageNumber}
+          onChange={handlePageChange}
+        />
       </Stack>}
     </main>
   );

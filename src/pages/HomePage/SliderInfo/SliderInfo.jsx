@@ -9,7 +9,6 @@ import sliderImage1 from '../../../assets/img/HomePage/SliderInfo/slider1.jpg';
 import sliderImage2 from '../../../assets/img/HomePage/SliderInfo/slider2.jpg';
 import sliderImage3 from '../../../assets/img/HomePage/SliderInfo/slider3.jpg';
 import Button from "../../../components/Button/Button";
-import '../../../assets/styles/vars.scss'
 
 const SliderInfo = () => {
 
