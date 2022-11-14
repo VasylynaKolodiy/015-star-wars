@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './ItemsPage.scss'
-import Loader from "../../components/Loader/Loader";
 import {useDispatch, useSelector} from "react-redux";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import ItemsList from "../../components/ItemsList/ItemsList";
@@ -11,9 +10,8 @@ import ItemListTable from "../../components/ItemListTable/ItemListTable";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import SearchAppBar from "../../components/SearchAppBar/SearchAppBar";
-import {DebounceInput} from 'react-debounce-input';
-import Skeleton from "@mui/material/Skeleton";
-import Scelet from "../../components/Scelet/Scelet";
+import SceletonCardMode from "../../components/SceletonCardMode/SceletonCardMode";
+import SceletonTableMode from "../../components/SceletonTableMode/SceletonTableMode";
 
 const ItemsPage = () => {
 
@@ -74,7 +72,9 @@ const ItemsPage = () => {
 
 
       {isItemsLoading
-        ? <Scelet/>
+        ? isTable
+          ? <SceletonCardMode/>
+          : <SceletonTableMode/>
         : itemsFull.results?.length > 0
           ? isTable
             ? <ItemsList items={itemsFull.results} itemsName={itemsName}/>

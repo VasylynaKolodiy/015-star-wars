@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import './ItemDetailPage.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import SceletonDetail from "../../components/SceletonDetail/SceletonDetail";
 
 const ItemDetailPage = () => {
 
@@ -31,7 +31,7 @@ const ItemDetailPage = () => {
         <BreadCrumbs name={item.name || item.title}/>
       </div>
       {isItemLoading
-        ? <Loader/>
+        ? <SceletonDetail/>
         : <ItemDetail item={item} itemPhoto={itemName}/>
       }
     </main>

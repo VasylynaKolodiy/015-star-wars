@@ -3,7 +3,6 @@ import './BreadCrumbs.scss'
 import {Link, useLocation} from "react-router-dom";
 
 const BreadCrumbs = ({name}) => {
-
   const location = useLocation();
   const data = location.pathname.split('/').slice(1);
 
@@ -27,7 +26,6 @@ const BreadCrumbs = ({name}) => {
                   {(item.charAt(0).toUpperCase() + item.slice(1)).replace(/-/g, ' ')}
               </span>
             }
-
           </li>
         )}
       </ul>

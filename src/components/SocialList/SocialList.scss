@@ -48,7 +48,6 @@
     right: 0;
   }
 
-
   &__kids {
     display: block;
     background-color: var(--color-gray);
@@ -60,12 +59,9 @@
     text-decoration: none;
     width: 50px;
     transition: .3s linear;
-    &:hover{
+
+    &:hover {
       background-color: var(--color-white);
     }
-
-
   }
-
-
 }

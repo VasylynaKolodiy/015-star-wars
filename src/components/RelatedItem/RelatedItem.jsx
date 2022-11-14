@@ -39,7 +39,6 @@ const RelatedItem = ({item, type, elem}) => {
                   : <p className='related__description-name'>{elem}</p>
       }
     </div>
-
   );
 };
 

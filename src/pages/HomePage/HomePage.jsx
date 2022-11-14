@@ -1,5 +1,4 @@
 import React from 'react';
-import './HomePage.scss'
 import SliderInfo from "./SliderInfo/SliderInfo";
 import Cards from "./Cards/Cards";
 

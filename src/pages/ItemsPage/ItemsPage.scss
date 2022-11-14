@@ -8,13 +8,22 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
+    position: relative;
   }
 
   .card {
     height: 300px;
+    width: 100%;
+
+    &__list.container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 20px;
+      width: 100%;
+    }
 
     &__title {
       font-size: 1.2rem;
@@ -23,81 +32,13 @@
 
     &__content {
       height: 84px;
-      border-right: 1px solid gray;
-      border-left: 1px solid gray;
       border-bottom: none;
     }
 
     &__wrapper {
-      border: 1px solid gray;
-      border-bottom: none;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
-  }
-
-  .search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    &__iconWrapper {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 10px;
-      left: 80px;
-      transition: .3s linear;
-    }
-
-    &__icon {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-}
-
-input {
-  color: darkgrey;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 5px 20px 5px 40px;
-  border-radius: 10px;
-  height: 40px;
-  width: 50%;
-  border: none;
-  transition: .3s linear;
-  position: relative;
-
-  &:focus, &:hover {
-    width: 100%;
-    outline: none;
-  }
-
-  &:focus + .search__iconWrapper, &:hover + .search__iconWrapper {
-    left: 10px;
-  }
-
-  &::placeholder {
-    color: darkgrey;
-  }
-}
-
-
-.skeleton {
-  padding: 0;
-  margin: 0 auto 0 auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  width: 80%;
-
-  &__inner {
-    width: 0.2fr;
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -129,7 +70,6 @@ input {
   margin-right: 0;
 }
 
-.css-58ftfq-MuiSkeleton-root {
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  border-radius: 10px;
+.css-1yjjitx-MuiSwitch-track {
+  background-color: white !important;
 }

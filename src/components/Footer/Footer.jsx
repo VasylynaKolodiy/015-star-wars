@@ -48,9 +48,7 @@ const Footer = () => {
             <a href='/'>Do Not Sell My Personal Information</a>
           </li>
         </ul>
-
       </div>
-
     </footer>
   );
 };

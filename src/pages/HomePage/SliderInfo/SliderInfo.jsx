@@ -1,10 +1,8 @@
 import React from 'react';
 import './SliderInfo.scss'
-// Import css files for slider
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import sliderImage1 from '../../../assets/img/HomePage/SliderInfo/slider1.jpg';
 import sliderImage2 from '../../../assets/img/HomePage/SliderInfo/slider2.jpg';
 import sliderImage3 from '../../../assets/img/HomePage/SliderInfo/slider3.jpg';
@@ -48,10 +46,10 @@ const SliderInfo = () => {
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    waitForAnimate : false,
-    pauseOnFocus : false,
-    pauseOnHover : false,
-    swipe : false,
+    waitForAnimate: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    swipe: false,
     customPaging: i => <div className='sliderInfo__dots'>
       <div className='sliderInfo__dots-progressbar' style={{backgroundColor: dataSlider[i].buttonColor}}>
       </div>

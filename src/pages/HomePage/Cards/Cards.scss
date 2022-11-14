@@ -1,14 +1,17 @@
-.cards{
+.cards {
   margin-bottom: 100px;
-  &__container.container{
-    width: 70%;
+
+  &__container.container {
+    width: 80%;
   }
-  &__header{
+
+  &__header {
     height: 700px;
     background: url("../../../assets/img/HomePage/Cards/cards-background.jpg") center top no-repeat;
     background-size: cover;
     position: relative;
-    &-info{
+
+    &-info {
       bottom: 15%;
       left: 50%;
       position: absolute;
@@ -16,26 +19,31 @@
       transform: translateX(-50%);
       width: 45%;
     }
-    &-title{
+
+    &-title {
       color: black;
       font-size: 3rem;
       margin-bottom: 40px;
     }
   }
 
-  &__body{
+  &__body {
     padding-bottom: 1em;
     padding-top: 3em;
-    background: linear-gradient(180deg,#1f4055 0,#5e6c88);
+    background: linear-gradient(180deg, #1f4055 0, #5e6c88);
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  &__list{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+  &__list {
+    display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     text-align: center;
-    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 30px 100px;
   }
 }

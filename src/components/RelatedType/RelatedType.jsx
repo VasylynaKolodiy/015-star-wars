@@ -33,17 +33,13 @@ const RelatedType = ({item, type}) => {
       )}
 
       <div className='buttons'>
-
         {startList > 0 && <Arrow className='button__prev'
                                  onClick={() => prevPage()}/>}
-
         {item[type].length > endList && <Arrow className='button__next'
                                                onClick={() => nextPage()}/>}
-
+      </div>
     </div>
-
-</div>
-);
+  );
 };
 
 export default RelatedType;

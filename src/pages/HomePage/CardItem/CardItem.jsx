@@ -10,8 +10,8 @@ const CardItem = ({imageUrl, link, title}) => {
         <img className="card__image"
              src={imageUrl}
              onError={event => {
-                          event.target.src = noImage
-                        }}
+               event.target.src = noImage
+             }}
              alt='Card'/>
       </div>
       <Link className="card__link" to={link}>

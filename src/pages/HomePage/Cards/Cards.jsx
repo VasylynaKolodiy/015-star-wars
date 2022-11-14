@@ -6,7 +6,6 @@ import card1 from "../../../assets/img/HomePage/Cards/card1.webp";
 import card2 from "../../../assets/img/HomePage/Cards/card2.jpg";
 import card3 from "../../../assets/img/HomePage/Cards/card3.jpg";
 import card4 from "../../../assets/img/HomePage/Cards/card4.jpeg";
-import Skeleton from "@mui/material/Skeleton";
 
 const Cards = () => {
   const dataCard = [

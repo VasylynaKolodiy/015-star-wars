@@ -7,7 +7,7 @@
     gap: 100px;
     align-items: center;
     justify-content: flex-start;
-    width: 80%;
+    width: 100%;
     padding: 30px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -18,7 +18,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
   }
@@ -52,12 +52,13 @@
     font-weight: bold;
   }
 
-  &__text-planetLink{
+  &__text-planetLink {
     color: inherit;
     font-style: italic;
     transition: .3s linear;
     padding: 3px 5px;
     border-radius: 10px;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
     }

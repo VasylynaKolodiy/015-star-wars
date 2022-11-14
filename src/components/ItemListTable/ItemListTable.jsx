@@ -18,7 +18,7 @@ function createData(tablePhoto, tableKey1, tableKey2, tableKey3, tableKey4, tabl
 const ItemListTable = ({items, itemsName}) => {
   const rows = []
   {
-    items?.map((item, j) =>
+    items?.map(item =>
       rows.push(createData(
         <Avatar className='table__photo'
                 src={`https://starwars-visualguide.com/assets/img/${itemsName}/${item.url.replace(/[^0-9]/g, '')}.jpg`}
@@ -31,22 +31,23 @@ const ItemListTable = ({items, itemsName}) => {
         Object.values(item)[1],
         Object.values(item)[2],
         Object.values(item)[3],
-        <Link className='tableLink' to={`/${itemsName}/${item.url.replace(/[^0-9]/g, '')}`}></Link>,
+        <Link className='tableLink' to={`/${itemsName}/${item.url.replace(/[^0-9]/g, '')}`}>
+        </Link>,
       )))
   }
-
 
   return (
     <TableContainer className='TableContainer container' component={Paper}>
       <Table className='Table' sx={{minWidth: 650}} size="small">
         <TableHead>
           {items && <TableRow>
-             <TableCell>AVATAR</TableCell>
+            <TableCell>AVATAR</TableCell>
             <TableCell align="left">{Object.keys(items[0])[0].toUpperCase().replaceAll('_', ' ')}</TableCell>
             <TableCell align="left">{Object.keys(items[0])[1].toUpperCase().replaceAll('_', ' ')}</TableCell>
             <TableCell align="left">{Object.keys(items[0])[2].toUpperCase().replaceAll('_', ' ')}</TableCell>
             <TableCell align="left">{Object.keys(items[0])[3].toUpperCase().replaceAll('_', ' ')}</TableCell>
-            <TableCell align="left"></TableCell>
+            <TableCell align="left">
+            </TableCell>
           </TableRow>}
         </TableHead>
         <TableBody>

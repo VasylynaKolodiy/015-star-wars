@@ -43,7 +43,6 @@ const SocialList = () => {
       <div>
         <a className="social__kids" href="/">Kids</a>
       </div>
-
     </div>
 
   );
