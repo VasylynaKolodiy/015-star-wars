@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import './Navigation.scss'
 
-const Navigation = ({setPageNumber}) => {
+const Navigation = () => {
   return (
     <nav className='navigation'>
       <NavLink className='navigation__link' to='/' end>Home</NavLink>

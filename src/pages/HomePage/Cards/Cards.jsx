@@ -11,22 +11,22 @@ const Cards = () => {
   const dataCard = [
     {
       imageUrl: card1,
-      link: '/',
+      link: '/starships',
       title: 'Meet the Ships and Vehicles',
     },
     {
       imageUrl: card2,
-      link: '/',
+      link: '/species',
       title: 'Meet the Droids',
     },
     {
       imageUrl: card3,
-      link: '/',
+      link: '/characters',
       title: 'Meet the Heroes',
     },
     {
       imageUrl: card4,
-      link: '/',
+      link: '/vehicles',
       title: 'Meet the Villains',
     },
   ]

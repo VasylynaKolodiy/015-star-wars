@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+html {
+  overflow-x: hidden;
+  color: var(--color-gray);
+  background: black url("./assets/img/HomePage/home-background.jpg") fixed center top repeat;
+}
+
+.App {
+  position: relative;
+  text-align: center;
+  min-height: 100vh;
+  margin-bottom: 320px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 20px 25px;
+  margin: 0 auto;
+}
+
+.logo__wrapper {
+  width: 238px;
+  height: 134px;
+  position: relative;
+  z-index: 20;
+  margin: 10px auto;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.labelMenu{
+  display:none;
+  flex-direction:column;
+  width:34px;
+  cursor:pointer;
+}
+
+.labelMenu .spanMenu{
+  background: #fff;
+  border-radius:20px;
+  height:3px;
+  margin: 3px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.spanMenu:nth-of-type(1){
+  width:50%;
+}
+.spanMenu:nth-of-type(2){
+  width:100%;
+}
+.spanMenu:nth-of-type(3){
+  width:75%;
+}
+.inputMenu[type="checkbox"]{
+  display:none;
+}
+
+.inputMenu[type="checkbox"]:checked ~ .spanMenu:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotate(45deg) translate(3px,0px);
+  
+}
+
+.inputMenu[type="checkbox"]:checked ~ .spanMenu:nth-of-type(2){
+  transform-origin:top;
+  transform:rotate(-45deg)
+}
+
+.inputMenu[type="checkbox"]:checked ~ .spanMenu:nth-of-type(3){
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(13px,-4px) rotate(45deg);
+}
+
+
+
+
+
+
+/*MEDIA*/
+
+@media (max-width: 1001px) {
+  html {
+    font-size: 0.8rem;
+  }
+
+  .logo__wrapper {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+  }
+
+  .logo {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 751px) {
+  .logo__wrapper {
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo {
+    width: max-content;
+    padding: 10px 0;
+  }
+
+  .menu__wrapper {
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 50px;
+  }
+  .labelMenu {
+    display: flex;
+  }
+}
+

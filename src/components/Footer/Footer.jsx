@@ -19,7 +19,7 @@ const Footer = () => {
           TM & © Lucasfilm Ltd. All Rights Reserved
         </p>
 
-        <ul className="footer__legals">
+        <ul className="footer__legals container">
           <li className='footer__legalItem'>
             <a href='/'>Terms of Use</a>
           </li>

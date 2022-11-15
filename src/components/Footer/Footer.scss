@@ -8,8 +8,11 @@
   text-align: center;
   background: black url("../../assets/img/Footer/footer-background.jpg") center -100px no-repeat;
   background-size: cover;
-  position: relative;
-  bottom: 0;
+  width: 100%;
+  position: absolute;
+  bottom: -320px;
+  left: 50%;
+  transform: translateX(-50%);
   &__overlay {
     position: absolute;
     top: 0;
