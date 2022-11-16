@@ -47,3 +47,13 @@
     padding: 30px 100px;
   }
 }
+
+@media (max-width: 1101px) {
+
+  .cards__body .cards__list{
+    padding: 20px 30px;
+  }
+  .cards__body .cards__list .card {
+    min-width: 190px;
+  }
+}
