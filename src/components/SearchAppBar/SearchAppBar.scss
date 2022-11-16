@@ -48,3 +48,29 @@ input {
   }
 }
 
+@media (max-width: 751px) {
+  .search {
+    left: auto;
+    top: 85px;
+    transform: none;
+    right: 0;
+    justify-content: flex-end;
+    &__iconWrapper {
+      top: 10px;
+      left: 145px;
+    }
+  }
+}
+
+@media (max-width: 501px) {
+  .search {
+    left: 0;
+    right: auto;
+    top: 140px;
+    justify-content: flex-start;
+    &__iconWrapper {
+      top: 10px;
+      left: 10px;
+    }
+  }
+}

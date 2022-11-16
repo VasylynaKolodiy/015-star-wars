@@ -19,3 +19,30 @@
   }
 
 }
+
+@media (max-width: 1251px) {
+  .skeleton.container {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 1001px) {
+  .skeleton.container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 751px) {
+  .skeleton.container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+@media (max-width: 651px) {
+  .skeleton.container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+}

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer__overlay">
       </div>
       <div className="footer__social">
-        <p className="footer_title">
+        <p className="footer__title">
           FOLLOW STAR WARS:
         </p>
         <SocialList/>

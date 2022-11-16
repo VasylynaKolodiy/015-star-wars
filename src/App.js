@@ -10,8 +10,13 @@ import NavigationModal from "./components/NavigationModal/NavigationModal";
 function App() {
   let [isOpen, setIsOpen] = useState(false)
 
+  function openMenu() {
+    document.getElementById('check').checked=!document.getElementById('check').checked;
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
         <div className='menu__wrapper'>
           <Link className="logo__wrapper" to='/'>
@@ -31,7 +36,7 @@ function App() {
         <Navigation/>
         <NavigationModal
           isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          openMenu={openMenu}
         />
         <AppRouter />
         <Footer/>

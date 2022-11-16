@@ -2,33 +2,33 @@ import React from 'react';
 import './NavigationModal.scss'
 import {NavLink} from "react-router-dom";
 
-const NavigationModal = ({isOpen, setIsOpen}) => {
+const NavigationModal = ({isOpen, openMenu}) => {
   return (
     <nav className={`navigationModal ${isOpen ? 'open' : ''}`}>
-      <div className='navigationModal__overlay' onClick={() => setIsOpen(!isOpen)}>
+      <div className='navigationModal__overlay' onClick={() => openMenu()}>
 
       </div>
       <NavLink className='navigationModal__link'
                to='/' end
-               onClick={() => setIsOpen(!isOpen)}>Home</NavLink>
+               onClick={() => openMenu()}>Home</NavLink>
       <NavLink className='navigationModal__link'
                to='/characters'
-               onClick={() => setIsOpen(!isOpen)}>Characters</NavLink>
+               onClick={() => openMenu()}>Characters</NavLink>
       <NavLink className='navigationModal__link'
                to='/starships'
-               onClick={() => setIsOpen(!isOpen)}>Starships</NavLink>
+               onClick={() => openMenu()}>Starships</NavLink>
       <NavLink className='navigationModal__link'
                to='/vehicles'
-               onClick={() => setIsOpen(!isOpen)}>Vehicles</NavLink>
+               onClick={() => openMenu()}>Vehicles</NavLink>
       <NavLink className='navigationModal__link'
                to='/planets'
-               onClick={() => setIsOpen(!isOpen)}>Planets</NavLink>
+               onClick={() => openMenu()}>Planets</NavLink>
       <NavLink className='navigationModal__link'
                to='/species'
-               onClick={() => setIsOpen(!isOpen)}>Species</NavLink>
+               onClick={() => openMenu()}>Species</NavLink>
       <NavLink className='navigationModal__link'
                to='/films'
-               onClick={() => setIsOpen(!isOpen)}>Films</NavLink>
+               onClick={() => openMenu()}>Films</NavLink>
     </nav>
   );
 };

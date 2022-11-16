@@ -5,9 +5,11 @@
   flex-direction: column;
   height: 567px;
 
+
   .css-58ftfq-MuiSkeleton-root {
     background-color: rgba(255, 255, 255, 0.5) !important;
     border-bottom: 1px solid white !important;
+    border-radius: 0;
   }
 
   .css-58ftfq-MuiSkeleton-root:first-child {
@@ -18,5 +20,11 @@
   .css-58ftfq-MuiSkeleton-root:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+  }
+}
+
+@media (max-width: 1251px) {
+  .sceleton__table {
+    width: 90%;
   }
 }

@@ -1,20 +1,30 @@
-.TableContainer{
+.TableContainer {
   width: 100% !important;
   padding: 0 10px;
   background-color: rgba(255, 255, 255, 0.5) !important;
   border-radius: 10px !important;
+  overflow-x: auto;
 }
-.MuiTableRow-root.css-34nofg-MuiTableRow-root{
+
+.MuiTableRow-root.css-34nofg-MuiTableRow-root {
   position: relative;
+  min-width: 700px;
   transition: .3s linear;
-  &:hover{
+  &:hover {
     background-color: rgba(0, 0, 0, 0.2) !important;
   }
 }
-.tableLink{
+
+.tableLink {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@media (max-width: 1251px) {
+  .TableContainer {
+    width: 90% !important;
+  }
 }

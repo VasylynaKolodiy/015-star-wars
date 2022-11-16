@@ -6,12 +6,14 @@
 
   .top {
     display: flex;
+    width: 100%;
     align-items: baseline;
     justify-content: space-between;
-    width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
     position: relative;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .card {
@@ -72,4 +74,45 @@
 
 .css-1yjjitx-MuiSwitch-track {
   background-color: white !important;
+}
+
+@media (max-width: 1251px) {
+  .items .top.container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1001px) {
+  .items__list.container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 751px) {
+  .items__list.container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+  .css-1f2kvjf-MuiFormControlLabel-root{
+    margin-left: 0 !important;
+  }
+  .items .top.container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+@media (max-width: 651px) {
+  .items__list.container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+
+@media (max-width: 501px) {
+  .items .top.container{
+    margin-bottom: 60px;
+  }
 }

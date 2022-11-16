@@ -27,13 +27,13 @@ const ItemDetailPage = () => {
 
   return (
     <main className='item'>
-      {/*<div className='top container'>*/}
-      {/*  <BreadCrumbs name={item.name || item.title}/>*/}
-      {/*</div>*/}
-      {/*{isItemLoading*/}
-      {/*  ? <SceletonDetail/>*/}
-      {/*  : <ItemDetail item={item} itemPhoto={itemName}/>*/}
-      {/*}*/}
+      <div className='top container'>
+        <BreadCrumbs name={item.name || item.title}/>
+      </div>
+      {isItemLoading
+        ? <SceletonDetail/>
+        : <ItemDetail item={item} itemPhoto={itemName}/>
+      }
     </main>
   );
 };
