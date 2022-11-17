@@ -52,8 +52,33 @@
 
   .cards__body .cards__list{
     padding: 20px 30px;
+    width: 100%;
+    justify-content: space-between;
   }
   .cards__body .cards__list .card {
-    min-width: 190px;
+    min-width: 200px;
+    width: 30%;
+  }
+  .cards__header-info{
+    width: 100%;
+  }
+  .cards__container.container {
+    width: 100%;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .cards__body .cards__list .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards__body .cards__list .card {
+    width: 90%;
+  }
+  .cards__body .cards__list{
+    justify-content: center;
   }
 }

@@ -14,7 +14,6 @@ function App() {
     document.getElementById('check').checked=!document.getElementById('check').checked;
     setIsOpen(!isOpen);
   }
-
   return (
     <div className='App'>
       <BrowserRouter>
