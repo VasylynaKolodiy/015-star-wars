@@ -44,35 +44,42 @@
   }
 }
 
-.css-1p5q5e5-MuiStack-root {
+.items__list + div,
+.container + div{
   margin: 30px auto 0 auto;
 }
 
-.MuiPagination-ul.css-wjh20t-MuiPagination-ul li button {
+.MuiPagination-ul li button {
   color: white;
   font-weight: bold;
   font-size: 18px;
 }
 
-.MuiPaginationItem-root.MuiPaginationItem-sizeLarge.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-ellipsis.css-1scal0h-MuiPaginationItem-root {
+.MuiPagination-ul li div {
   color: white;
   font-weight: bold;
   font-size: 18px;
 }
 
-.css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root:hover {
+.MuiPaginationItem-root {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.MuiPaginationItem-root:hover {
   background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-.css-rppfq7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+.Mui-selected {
   background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd.FormControlLabel.css-j204z7-MuiFormControlLabel-root {
+.MuiFormControlLabel-root {
   margin-right: 0;
 }
 
-.css-1yjjitx-MuiSwitch-track {
+.MuiSwitch-track {
   background-color: white !important;
 }
 

@@ -1,3 +1,6 @@
+.top.container + div{
+  margin: 0 auto 0 auto;
+}
 .TableContainer {
   width: 100% !important;
   padding: 0 10px;
@@ -6,7 +9,7 @@
   overflow-x: auto;
 }
 
-.MuiTableRow-root.css-34nofg-MuiTableRow-root {
+.MuiTableRow-root {
   position: relative;
   min-width: 700px;
   transition: .3s linear;
